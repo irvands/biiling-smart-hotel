@@ -172,6 +172,9 @@
     <script src="{{asset('js/select2.min.js')}}"></script>
     <script src="{{asset('js/jquery.nice-number.js')}}"></script>
     <script src="https://fengyuanchen.github.io/cropperjs/js/cropper.js"></script>
+    <script type="text/javascript"
+	      src="https://app.sandbox.midtrans.com/snap/snap.js"
+	      data-client-key="SB-Mid-client-2rHrh2aAq0fayN3Z"></script>
     @include('sweetalert::alert')
     @section('js')
 
@@ -264,6 +267,24 @@
 			}
 		});
 	});
+    </script>
+
+<script>
+        $('#btn-submit').one('click', function (event) {
+            event.preventDefault();
+            swal({
+                title: 'Apakah Yakin Untuk Menyelesaikan Transaksi?',
+                text: 'Anda tidak bisa membuat transaksi barul sebelum melakukan pembayaran !',
+                icon: 'warning',
+                button: ["Batal", "Yakin!"],
+            }).then(function (value) {
+                if (value) {
+                    document.getElementById('selesaikan').submit();
+                    document.getElementById('btn-submit').disabled = true;
+                    document.getElementById('bayar').disabled = false;
+                }
+            });
+        });
     </script>
 </body>
 

@@ -88,7 +88,7 @@
     </div>
     
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
 
@@ -134,7 +134,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -180,7 +180,7 @@
                                 <td>{{'Rp.'.number_format($data->total_harga,2,',','.')}}</td>
                                 <td>
                                 @if($data->status == 'Pesanan Disiapkan')
-                                  <label class="badge badge-danger">Pesanan Diterima</label>
+                                  <label class="badge badge-warning">Pesanan Disiapkan</label>
                                 @elseif($data->status == 'Pesanan Dibuat')
                                   <label class="badge badge-primary">Pesanan Dibuat</label>
                                 @else($data->status == 'Pesanan Diantar')

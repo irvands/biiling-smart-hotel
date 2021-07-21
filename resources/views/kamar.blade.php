@@ -130,7 +130,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nama">Upload Ktp</label>
-                        <input type="file" class="form-control" name="ktp" id="ktp" name="ktp">
+                        <input type="file" class="form-control" name="ktp" id="ktp" name="ktp" required>
                     </div>
 
 

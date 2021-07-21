@@ -31,7 +31,7 @@ class KamarController extends Controller
             'ktp'  => 'required',
     	]);
  
-        // dd($request->all());
+        // dd($request->jumlah_hari);
 
         $namakamar = $request->nama_kamar;
         $isnama = Kamar::select('id')->where('nama',$namakamar)->first();
@@ -44,6 +44,7 @@ class KamarController extends Controller
             'nama' => $request->nama,
             'cek_in' => $request->cek_in,
             'cek_out' => $request->cek_out,
+            'jumlah_hari'=>$request->jumlah_hari,
             'total_harga' => $request->total_harga,
             'ktp' => $request->ktp
         ]);

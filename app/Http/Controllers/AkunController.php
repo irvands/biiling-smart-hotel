@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Billing;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,11 @@ class AkunController extends Controller
     
     public function index()
     {
+        
         $id = Auth::user()->id;
+        $histori = Billing::where([['id_tamu',$id],['status',3]])->get();
+        $total_histori = Billing::where([['id_tamu',$id],['status',3]])->count();
+
         $akun = User::where('id', $id)->first();
 
         $ava = $akun->avatar;
@@ -27,9 +32,9 @@ class AkunController extends Controller
             $avatar = asset('images/user/'.$ava);
         }
 
-        $minsilver = 100;
-        $mingold = 500;
-        $mindiamod = 1000;
+        $minsilver = 101;
+        $mingold = 501;
+        $mindiamod = 1001;
        
         if($akun->point<=100){
             $badge = 'Bronze';
@@ -57,7 +62,9 @@ class AkunController extends Controller
          'neededpoint' => $neededpoint,
           'nextbadge' => $nextbadge,
           'progress' => $progress,
-          'avatar' => $avatar]
+          'avatar' => $avatar,
+          'histori' => $histori,
+          'total_his'=>$total_histori]
         );
     }
 

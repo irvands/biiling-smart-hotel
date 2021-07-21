@@ -19,14 +19,15 @@ class Transaksikamar extends Model
         'cek_in',
         'cek_out',
         'ktp',
+        'jumlah_hari',
         'total_harga'
     ];
 
     public function tamu(){
-        return $this->belongsTo('App\User', 'id_tamu');
+        return $this->belongsTo('App\Models\User', 'id_tamu');
     }
 
     public function kamar(){
-        return $this->belongsTo('App\Kamar', 'id_kamar');
+        return $this->belongsTo('App\Models\Kamar', 'id_kamar');
     }
 }

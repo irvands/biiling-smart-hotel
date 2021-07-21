@@ -28,14 +28,23 @@ Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::
 Route::get('login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
 Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallBack']);
 
-
 Route::get('/kamar', [App\Http\Controllers\KamarController::class, 'index'])->name('kamar');
 Route::post('/kamar/booking', [App\Http\Controllers\KamarController::class, 'booking'])->name('bookingkamar');
-Route::get('/restaurant', [App\Http\Controllers\RestaurantController::class, 'index'])->name('restaurant');
 
+Route::get('/restaurant', [App\Http\Controllers\RestaurantController::class, 'index'])->name('restaurant');
 Route::post('/restaurant/pesan', [App\Http\Controllers\RestaurantController::class, 'pesan'])->name('pesanmakan');
+
 Route::get('/akun', [App\Http\Controllers\AkunController::class, 'index'])->name('akun');
 Route::post('/akun/ubah-foto', [App\Http\Controllers\AkunController::class, 'editavatar'])->name('ubahfoto');
 Route::post('/akun/update-data-diri', [App\Http\Controllers\AkunController::class, 'updatedatadiri'])->name('updatedatadiri');
 
+Route::get('/tagihan', [App\Http\Controllers\TagihanController::class, 'index'])->name('tagihan');
+Route::get('/tagihan/{id}', [App\Http\Controllers\TagihanController::class, 'bayar'])->name('bayar');
+Route::post('/tagihan/selesaikan', [App\Http\Controllers\TagihanController::class, 'endtrans'])->name('selesaikan');
+Route::get('/cetak-nota', [App\Http\Controllers\TagihanController::class, 'cetakbil'])->name('cetakbil');
+
+
+Route::get('/list-tagihan', [App\Http\Controllers\BayarController::class, 'index'])->name('list-tagihan');
+
+Route::get('/maintenance', [App\Http\Controllers\HomeController::class, 'mt'])->name('mt');
 

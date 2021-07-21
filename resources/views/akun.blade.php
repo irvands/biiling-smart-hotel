@@ -67,9 +67,15 @@
 
                     <div class="card-body">
                         <div class="d-flex justify-content-between pb-3">
-                            <h4 class="card-title mb-0">Activities</h4>
-                            <p class="mb-0 text-muted">20 finished, 5 remaining</p>
+                            <h4 class="card-title mb-0">History Transaksi</h4>
+                            <p class="mb-0 text-muted">{{$total_his}} Transaksi Sukses</p>
                         </div>
+                        <ul class="list-group list-group-flush">
+                            @foreach($histori as $data)
+                            <li class="list-group-item" onclick="location.href = 'tagihan/{{$data->id}}';"><a class="text-success float-right">+40 Point</a>{{$data->kode_transaksi}} 
+                            <br><strong>{{'Rp.'.number_format($data->grand_total,2,',','.')}}</strong></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -115,7 +121,7 @@
                                         placeholder="Password Baru">
                                 </div>
                                 <input type="checkbox" class="form-checkbox"> <small> Show password</small>
-			                    
+
                             </div>
 
                             <div class="form-group">

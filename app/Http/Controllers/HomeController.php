@@ -36,4 +36,7 @@ class HomeController extends Controller
         'detilmakanan' => $detilmakanan
         ]);
     }
+    public function mt(){
+        return view('mt');
+    }
 }

@@ -57,7 +57,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{">
+        <a class="nav-link" href="{{route('mt')}}">
             <i class="menu-icon mdi mdi-sofa"></i>
             <span class="menu-title">Ruangan</span>
         </a>
@@ -71,16 +71,23 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{">
+        <a class="nav-link" href="{{route('mt')}}">
             <i class="menu-icon mdi mdi-tshirt-crew"></i>
             <span class="menu-title">Laundry</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{">
+        <a class="nav-link" href="{{route('tagihan')}}">
             <i class="menu-icon mdi mdi-receipt"></i>
-            <span class="menu-title">Histori Transaksi</span>
+            <span class="menu-title">Checkout</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('list-tagihan')}}">
+            <i class="menu-icon mdi mdi-receipt"></i>
+            <span class="menu-title">Tagihan</span>
         </a>
     </li>
 
